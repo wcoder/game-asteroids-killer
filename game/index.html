@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+	<meta name="author" content="Pakalo Evgeniy">
+	<title>Asteroids killer</title>
+	<link rel="shortcut icon" href="interface/img/favicon.ico">
+    
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+            font: 16px Verdana;
+            background: url('interface/img/bg.jpg');
+		}
+        #logo {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 200px;
+            height: 100px;
+            background: url('interface/img/logo.png');   
+        }
+		#canvas {
+			width: 400px;
+			height: 600px;
+			border: 1px solid #CCC;
+			background: #000 url('interface/img/bg1.png');
+			margin: 0 auto;
+			margin-top: 20px;
+			overflow: hidden;
+		}
+		#ship {	
+			position: relative;
+			width: 100px;
+			height: 40px;
+			top: 545px;
+			left: 150px;			
+			background: url('interface/img/ship.png');	
+		}
+		.bullet {
+			position: relative;
+			width: 10px;
+			height: 1px;
+			top: 0;
+			left: 0;
+			background: #F00;
+			border-top: 1px solid #F00;
+		}
+        .enemy {
+            position: relative;
+      		width: 50px;
+			height: 20px;
+			top: -40px;
+			left: 100px;
+            background: url('interface/img/enemy1.png');    
+        }
+        #game_over, #game_win {
+            position: relative;
+            color: #FFF;
+            top: 250px;
+            text-align: center;
+            font-size: 30px;
+        }
+        #game_over p, #game_win p {
+            font-size: 12px;
+        }
+		#game_win span {
+			color: #F00;
+		}
+		#info, #help {
+            position: absolute;
+            top: 150px;
+            left: 50px;
+            padding-top: 100px;
+			width: 400px;
+			color: #fff;
+		}
+        #help {
+			top: 300px;
+        }
+        #help p {
+            font-size: 11px;
+            padding-left: 20px;
+        }
+        #copyright {
+            margin-top: 30px;
+            color: #fff;
+            font-size: 12px;
+            width: 100%;
+            text-align: center;
+        }
+        #copyright span {
+            color: #F00;
+        }
+	</style>
+	
+	<script type="text/javascript" src="interface/js/jquery-1.6.min.js"></script>
+	<script type="text/javascript" src="interface/js/game.js"></script>
+    
+</head>
+
+<body>
+
+
+<div id="logo"></div>
+<div id="canvas">
+	<div id="ship"></div>
+</div>
+<div id="info">
+    <div id="level">Уровень: <span></span></div>
+    <div id="game">Жизни: <span></span></div>
+	<div id="speed">Скорость: <span></span></div>
+	<div id="shoots">Выстрелы: <span></span></div>
+    <div id="killed">Уничтожено: <span></span></div>
+</div>
+<div id="help">Управление:
+	<p>Вверх: ^</p>
+	<p>Вниз: v</p>
+	<p>Влево: <</p>
+	<p>Вправо: ></p>
+	<p>Огонь: пробел</p>
+	<p>Пауза: P</p>
+	<p>Консоль: Enter</p>
+</div>
+<div id="copyright">© 2011 <span>Created by</span> Pakalo Evgeniy</div>
+
+
+
+
+</body>
+</html>
