@@ -1,7 +1,7 @@
 /**
  * Game for web "Asteroids killer" 
  *
- * @author     Pakalo Evgeniy
+ * @author     Yauheni Pakala
  * @copyright  2011
  * @version    1.0
  */
@@ -24,7 +24,10 @@ $(function(){
      * w - Øèðèíà ïîëîòíà
      * h - Âûñîòà ïîëîòíà
 	 */ 
-	canvas = {w: mcanvas.width(),h: mcanvas.height()}
+	canvas = {
+        w: mcanvas.width(),
+        h: mcanvas.height()
+    };
 	
 	/**
 	 * Êëàññ 'êîðàáëü'
@@ -33,21 +36,26 @@ $(function(){
      * w - Øèðèíà êîðàáëÿ
      * h - Âûñîòà êîðàáëÿ 
 	 */
-	ship = {x: ReplacePx(mship.css("left")),y: ReplacePx(mship.css("top")),w: mship.width(),h: mship.height()}
+	ship = {
+        x: ReplacePx(mship.css("left")),
+        y: ReplacePx(mship.css("top")),
+        w: mship.width(),
+        h: mship.height()
+    };
 	
 	/**
 	 * Êëàññ 'ïóëÿ'
      * w - Øèðèíà ïóëè êîðàáëÿ [px]
      * h - Âûñîòà ïóëè êîðàáëÿ [px] 
 	 */
-	bullet = {w: 10,h: 1}
+	bullet = {w: 10,h: 1};
     
     /**
      * Êëàññ 'àñòåðîèä'
      * w - Øèðèíà àñòåðîèäà [px]
      * h - Âûñîòà àñòåðîèäà [px]
      */
-    enemy = {w: 50,h: 20}    
+    enemy = {w: 50,h: 20}   ; 
 	
 	/**
 	 * Êëàññ íàñòðîåê
@@ -67,13 +75,13 @@ $(function(){
         shoots: 0,                // Êîëè÷åñòâî âûñòðåëîâ [Integer]
         kill: 0,                  // Êîëè÷åñòâî óáèòûõ àñòåðîèäîâ [Integer]
         kill_buffer: 0            // Âðåìåííîå õðàíåíèå çíà÷åíèÿ óáèòûõ àñòåðîèäîâ [Integer]
-	}
+	};
 	
 	/**
 	 * Çàïóñê êîíòðîëëåðà ïðè íàæàòèè/îòïóñêàíèè êëàâèøè
 	 */
-    $('body').keyup(function(e){     key_up(e);    });
-    $('body').keydown(function(e){   key_down(e);  });
+    $('body').keyup(key_up);
+    $('body').keydown(key_down);
 	
 	/**
 	 * Àíèìàöèÿ ôîíà
@@ -136,23 +144,15 @@ function restart () {
 
 
 
-/**
- * ×èòû
- */
 function codes () {
-	code = prompt('Ââåäèòå êîä:');
+	var code = prompt('Code:');
 	if (code == 'bullet1' || code == 'bullet2' || code == 'bullet3')
 		settings.code = code;
-	else alert('Îøèáêà!');		
+	else alert('Error!');		
 }
 
-
-
-/** 
- * Ïàóçà
- */
 function pause () {
-	alert('Ïàóçà!\n×òîáû ïðîäîëæèòü, íàæìèòå Enter!');
+	alert('Pause!\nPress Enter!');
 }
 
 
@@ -258,14 +258,14 @@ function game_status () {
     // Åñëè ïðîèãðàëè, çàâåðøàåì
     if (settings.game == 0) {
         mcanvas.html('');
-        mcanvas.html('<div id="game_over">Êîíåö èãðû!<br><br><br><p>×òîáû ñíîâà íà÷àòü, íàæìèòå Enter!</p></div>');
+        mcanvas.html('<div id="game_over">Game over!<br><br><br><p>Press Enter!</p></div>');
     }
 	// Åñëè âûéãðàëè, çàâåðøàåì
     if (settings.level == 3 && settings.kill >= 100) {
 		settings.game = -1;
         mcanvas.html('');
 		$('#info').html('');
-        mcanvas.html('<div id="game_win"><span>ÏÎÁÅÄÀ!</span><br><p>Âû ñïàñëè íàøó ïëàíåòó!</p><br><p>×òîáû ñíîâà íà÷àòü, íàæìèòå Enter!</p></div>');
+        mcanvas.html('<div id="game_win"><span>Win!</span><br><p>Âû ñïàñëè íàøó ïëàíåòó!</p><br><p>Press Enter!</p></div>');
     }
     // ÓÐÎÂÍÈ
     // Óðîâåíü 2
